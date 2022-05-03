@@ -1,6 +1,10 @@
+// Components imports
 import React, { Component } from 'react';
-import flats from '../../data/flats';
 import FlatList from './flat_list';
+import Marker from './marker';
+
+// DB import
+import flats from '../../data/flats';
 
 class App extends Component {
   constructor(props) {

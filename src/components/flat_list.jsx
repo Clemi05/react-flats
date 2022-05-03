@@ -7,10 +7,7 @@ class FlatList extends Component {
     return flats.map((flat, index) => {
       return (
         <Flat
-          name={flat.name}
-          imageUrl={flat.imageUrl}
-          price={flat.price}
-          priceCurrency={flat.priceCurrency}
+          flat={flat}
           index={index}
           key={flat.lat}
         />
