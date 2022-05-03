@@ -1,10 +1,40 @@
-body {
-  font-family: Helvetica;
+// body {
+//   font-family: Helvetica;
+// }
+
+// #root {
+//   height: 100vh;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+#root>div {
+  display: flex;
+  height: 100vh;
 }
 
-#root {
-  height: 100vh;
+.left-scene {
+  flex: 0 0 60%;
+  background-color: #ecf0f1;
+  overflow: scroll;
+
+  .flat-list {
+    column-count: 2;
+    column-gap: 5px;
+    padding: 5px;
+
+    .flat-list {
+      width: 100%;
+      margin: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+.rigth-scene {
+  flex: 0 0 40%;
+  position: sticky;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
