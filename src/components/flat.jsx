@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 
 class Flat extends Component {
+  handleClick = () => {
+    const { selectFlat, index } = this.props;
+    selectFlat(index);
+  }
+
   render() {
     const color1 = "rgba(0, 0, 0, 0.3)";
     const color2 = "rgba(0, 0, 0, 0.2)";
-    const { name, imageUrl, price, priceCurrency } = this.props.flat;
+    const { flat, selected } = this.props;
     return (
-      <div className="card" style={{
-        backgroundImage: `linear-gradient(${color1}, ${color2}), url('${imageUrl}')`
-      }}>
+      <div className={`card${selected ? 'active' : ''}`} style={{ backgroundImage: `linear-gradient(${color1}, ${color2}), url('${flat.imageUrl}')` }}>
         <div className="card-category">
-          {price} {priceCurrency}
+          {flat.price} {flat.priceCurrency}
         </div>
         <div className="card-description">
-          <h2>{name}</h2>
+          <h2>{flat.name}</h2>
         </div>
-        <a className="card-link" href="#"></a>
+        <a className="card-link" href="#" onClick={this.handleClick}></a>
       </div>
     );
   }
