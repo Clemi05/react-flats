@@ -39,8 +39,16 @@ body {
 }
 
 .marker {
-  height: 20px;
-  width: 20px;
-  background-color: red;
-  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  width: 50px;
+  padding: 0px 8px;
+  border: 1px solid #FF5A5F;
+  background-color: #ffffff;
+  color:#FF5A5F;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 28px;
 }

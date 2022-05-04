@@ -27,7 +27,7 @@ class App extends Component {
     const { selectedFlat } = this.state;
     return {
       lat: selectedFlat.lat,
-      lng: selectedFlat.lng
+      lng: selectedFlat.lng,
     };
   }
 
@@ -41,15 +41,19 @@ class App extends Component {
           selectedFlat={selectedFlat}
           selectFlat={this.selectFlat}
         />
-        {/* <div className="map-container">
+        <div className="map-container">
           <GoogleMapReact
-            bootstrapURLKeys={{ key: "" }}
-            defaultCenter={defaultProps.center}
-            defaultZoom={defaultProps.zoom}
+            defaultCenter={this.center()}
+            defaultZoom={12}
           >
-          <Marker />
-        </GoogleMapReact>
-        </div> */}
+            <Marker
+              lat={selectedFlat.lat}
+              lng={selectedFlat.lng}
+              selectedFlat={selectedFlat}
+              selectFlat={this.selectFlat}
+            />
+          </GoogleMapReact>
+        </div>
       </div>
     );
   }
